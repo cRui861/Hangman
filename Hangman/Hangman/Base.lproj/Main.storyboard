@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="33m-bG-32Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="33m-bG-32Y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,12 +22,514 @@
                     <view key="view" contentMode="scaleToFill" id="xKS-yl-l6T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hangman1" translatesAutoresizingMaskIntoConstraints="NO" id="agB-c1-Ti5">
+                                <rect key="frame" x="96" y="44" width="183" height="189"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="agB-c1-Ti5" secondAttribute="height" multiplier="61:63" id="VmD-VA-6jO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm1-mr-UPB">
+                                <rect key="frame" x="152" y="242" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2b-Kp-pli" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="29" y="421" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="L">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCz-t5-1J0" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="83" y="421" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="M">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSZ-GA-KoW" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="136" y="421" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="N">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-yb-bzd" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="192" y="421" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="O">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhU-wl-8SD" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="246" y="421" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="P">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypZ-o7-F2B" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="300" y="421" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Q">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOa-VE-o1U" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="56" y="475" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="R">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-JV-qie" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="111" y="475" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="S">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LV4-L1-eIE" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="219" y="475" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="U">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VN6-8m-6cd" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="277" y="475" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="V">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bd-1J-ccJ" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="84" y="529" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="W">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRy-Gf-V7A" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="137" y="529" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZG-YK-xHw" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="164" y="475" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="T">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq6-OQ-7Fw" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="193" y="529" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Y">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfJ-6J-jeT" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="247" y="529" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Z">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incorrect Guesses:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2q-Tw-kWk">
+                                <rect key="frame" x="111" y="281" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiI-WJ-xnf">
+                                <rect key="frame" x="154" y="593" width="67" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="QTn-AE-BcD"/>
+                                    <constraint firstAttribute="height" constant="34" id="ROD-dh-f54"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Guess">
+                                    <color key="titleColor" red="0.078431372549019607" green="0.20392156862745098" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIG-fQ-Vgd" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="29" y="313" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="A">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372549019607" green="0.20392156862745098" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeo-9T-hV6" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="83" y="313" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="B">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWP-wL-BDs" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="190" y="313" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="D">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afw-lV-m1r" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="244" y="313" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="E">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRQ-G4-aIc" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="298" y="313" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="F">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-lS-gW1" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="56" y="367" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="G">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0w-pF-7tk" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="110" y="367" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="H">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7c-u1-vwB" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="165" y="367" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="I">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tug-fX-ub9" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="219" y="367" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="J">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCy-YZ-Ns5" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="277" y="367" width="45" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="K">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0C-Qk-KSx" customClass="LetterButton" customModule="Hangman" customModuleProvider="target">
+                                <rect key="frame" x="136" y="313" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kWw-OD-4cv"/>
+                                    <constraint firstAttribute="width" constant="45" id="l6o-Qb-vV6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" red="0.89234705199999997" green="0.89234705199999997" blue="0.89234705199999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6J-Tw-zO1">
+                                <rect key="frame" x="262" y="281" width="10.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JZG-YK-xHw" firstAttribute="leading" secondItem="fOa-VE-o1U" secondAttribute="trailing" constant="63" id="0fC-ba-CUM"/>
+                            <constraint firstItem="rq6-OQ-7Fw" firstAttribute="height" secondItem="YRy-Gf-V7A" secondAttribute="height" id="0hJ-ae-7YU"/>
+                            <constraint firstItem="DFf-yb-bzd" firstAttribute="height" secondItem="dSZ-GA-KoW" secondAttribute="height" id="1ez-99-qA0"/>
+                            <constraint firstItem="tug-fX-ub9" firstAttribute="top" secondItem="Q0w-pF-7tk" secondAttribute="top" id="2Vk-gf-O9E"/>
+                            <constraint firstItem="3Bd-1J-ccJ" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="68" id="3Sx-Z8-pH8"/>
+                            <constraint firstItem="SRQ-G4-aIc" firstAttribute="leading" secondItem="j0C-Qk-KSx" secondAttribute="trailing" constant="117" id="3gn-Ws-kLE"/>
+                            <constraint firstItem="BCy-YZ-Ns5" firstAttribute="top" secondItem="Q0w-pF-7tk" secondAttribute="top" id="4q0-dq-WgO"/>
+                            <constraint firstItem="H7c-u1-vwB" firstAttribute="top" secondItem="Q0w-pF-7tk" secondAttribute="top" id="57c-eb-kLw"/>
+                            <constraint firstItem="rq6-OQ-7Fw" firstAttribute="top" secondItem="YRy-Gf-V7A" secondAttribute="top" id="5T7-ut-wqS"/>
+                            <constraint firstItem="y2q-Tw-kWk" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="95" id="8bk-5N-Chd"/>
+                            <constraint firstItem="SRQ-G4-aIc" firstAttribute="width" secondItem="j0C-Qk-KSx" secondAttribute="width" id="9Rc-yM-sQk"/>
+                            <constraint firstItem="lCz-t5-1J0" firstAttribute="top" secondItem="dSZ-GA-KoW" secondAttribute="top" id="9gc-Xx-idb"/>
+                            <constraint firstItem="Gm1-mr-UPB" firstAttribute="top" secondItem="agB-c1-Ti5" secondAttribute="bottom" constant="9" id="Ayt-Eh-oXa"/>
+                            <constraint firstItem="SRQ-G4-aIc" firstAttribute="bottom" secondItem="j0C-Qk-KSx" secondAttribute="bottom" id="B5N-K5-fGW"/>
+                            <constraint firstItem="jYu-JV-qie" firstAttribute="bottom" secondItem="JZG-YK-xHw" secondAttribute="bottom" id="CEf-BV-qvk"/>
+                            <constraint firstItem="IWP-wL-BDs" firstAttribute="height" secondItem="j0C-Qk-KSx" secondAttribute="height" id="CR5-hn-AzV"/>
+                            <constraint firstItem="JZG-YK-xHw" firstAttribute="width" secondItem="dSZ-GA-KoW" secondAttribute="width" id="D8p-er-8Gh"/>
+                            <constraint firstItem="lfJ-6J-jeT" firstAttribute="bottom" secondItem="rq6-OQ-7Fw" secondAttribute="bottom" id="EPn-0c-asU"/>
+                            <constraint firstItem="Gm1-mr-UPB" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="136" id="EWK-tW-sCW"/>
+                            <constraint firstItem="I6J-Tw-zO1" firstAttribute="top" secondItem="y2q-Tw-kWk" secondAttribute="top" id="EvC-Xy-Twb"/>
+                            <constraint firstItem="lfJ-6J-jeT" firstAttribute="leading" secondItem="rq6-OQ-7Fw" secondAttribute="trailing" constant="9" id="F2d-ma-0jL"/>
+                            <constraint firstItem="DFf-yb-bzd" firstAttribute="top" secondItem="dSZ-GA-KoW" secondAttribute="top" id="FPr-oh-UsS"/>
+                            <constraint firstItem="DIG-fQ-Vgd" firstAttribute="top" secondItem="j0C-Qk-KSx" secondAttribute="top" id="FoK-cl-akm"/>
+                            <constraint firstItem="Afw-lV-m1r" firstAttribute="width" secondItem="j0C-Qk-KSx" secondAttribute="width" id="GAA-Rp-IP0"/>
+                            <constraint firstItem="ypZ-o7-F2B" firstAttribute="height" secondItem="dSZ-GA-KoW" secondAttribute="height" id="Hzm-Vv-Rm2"/>
+                            <constraint firstItem="sRX-lS-gW1" firstAttribute="height" secondItem="Q0w-pF-7tk" secondAttribute="height" id="I8n-SX-rtF"/>
+                            <constraint firstItem="Q0w-pF-7tk" firstAttribute="top" secondItem="j0C-Qk-KSx" secondAttribute="bottom" constant="9" id="IJC-z2-Efz"/>
+                            <constraint firstItem="LV4-L1-eIE" firstAttribute="top" secondItem="JZG-YK-xHw" secondAttribute="top" id="IPD-gR-dUc"/>
+                            <constraint firstItem="XhU-wl-8SD" firstAttribute="leading" secondItem="dSZ-GA-KoW" secondAttribute="trailing" constant="65" id="Ic8-HE-6be"/>
+                            <constraint firstItem="DIG-fQ-Vgd" firstAttribute="bottom" secondItem="j0C-Qk-KSx" secondAttribute="bottom" id="IoQ-MN-r9i"/>
+                            <constraint firstItem="ypZ-o7-F2B" firstAttribute="bottom" secondItem="dSZ-GA-KoW" secondAttribute="bottom" id="JVA-3I-ElO"/>
+                            <constraint firstItem="3Bd-1J-ccJ" firstAttribute="bottom" secondItem="YRy-Gf-V7A" secondAttribute="bottom" id="KS4-mT-04m"/>
+                            <constraint firstItem="IWP-wL-BDs" firstAttribute="top" secondItem="j0C-Qk-KSx" secondAttribute="top" id="KcS-hB-qH6"/>
+                            <constraint firstItem="lfJ-6J-jeT" firstAttribute="top" secondItem="rq6-OQ-7Fw" secondAttribute="top" id="Lv0-XZ-pfW"/>
+                            <constraint firstItem="Q0w-pF-7tk" firstAttribute="leading" secondItem="sRX-lS-gW1" secondAttribute="trailing" constant="9" id="M6G-VK-aPb"/>
+                            <constraint firstItem="sRX-lS-gW1" firstAttribute="bottom" secondItem="Q0w-pF-7tk" secondAttribute="bottom" id="M8m-aQ-3yA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OiI-WJ-xnf" secondAttribute="trailing" constant="138" id="MWn-GW-GdW"/>
+                            <constraint firstItem="x2b-Kp-pli" firstAttribute="top" secondItem="dSZ-GA-KoW" secondAttribute="top" id="NaM-QO-Ske"/>
+                            <constraint firstItem="IWP-wL-BDs" firstAttribute="leading" secondItem="j0C-Qk-KSx" secondAttribute="trailing" constant="9" id="Ne3-lD-rcV"/>
+                            <constraint firstItem="rq6-OQ-7Fw" firstAttribute="leading" secondItem="YRy-Gf-V7A" secondAttribute="trailing" constant="11" id="OHX-y5-iwb"/>
+                            <constraint firstItem="Afw-lV-m1r" firstAttribute="bottom" secondItem="j0C-Qk-KSx" secondAttribute="bottom" id="OKJ-hv-mzP"/>
+                            <constraint firstItem="DFf-yb-bzd" firstAttribute="bottom" secondItem="dSZ-GA-KoW" secondAttribute="bottom" id="PGB-EA-V55"/>
+                            <constraint firstItem="DIG-fQ-Vgd" firstAttribute="width" secondItem="j0C-Qk-KSx" secondAttribute="width" id="Q95-5c-gXE"/>
+                            <constraint firstItem="sRX-lS-gW1" firstAttribute="top" secondItem="Q0w-pF-7tk" secondAttribute="top" id="Q9Y-KL-J6c"/>
+                            <constraint firstItem="YRy-Gf-V7A" firstAttribute="top" secondItem="JZG-YK-xHw" secondAttribute="bottom" constant="9" id="RAI-Od-KEC"/>
+                            <constraint firstItem="tug-fX-ub9" firstAttribute="bottom" secondItem="Q0w-pF-7tk" secondAttribute="bottom" id="RLv-mb-a3I"/>
+                            <constraint firstItem="fOa-VE-o1U" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="40" id="RwS-hu-1eP"/>
+                            <constraint firstItem="Afw-lV-m1r" firstAttribute="height" secondItem="j0C-Qk-KSx" secondAttribute="height" id="Sn2-ac-oAn"/>
+                            <constraint firstItem="BCy-YZ-Ns5" firstAttribute="leading" secondItem="Q0w-pF-7tk" secondAttribute="trailing" constant="122" id="SsI-Zy-aQr"/>
+                            <constraint firstItem="XhU-wl-8SD" firstAttribute="width" secondItem="dSZ-GA-KoW" secondAttribute="width" id="T00-uW-7Fr"/>
+                            <constraint firstItem="VN6-8m-6cd" firstAttribute="leading" secondItem="JZG-YK-xHw" secondAttribute="trailing" constant="68" id="TDK-zg-lIS"/>
+                            <constraint firstItem="agB-c1-Ti5" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="80" id="UU2-ti-Hhb"/>
+                            <constraint firstItem="IWP-wL-BDs" firstAttribute="bottom" secondItem="j0C-Qk-KSx" secondAttribute="bottom" id="UYy-SK-PLQ"/>
+                            <constraint firstItem="LV4-L1-eIE" firstAttribute="width" secondItem="JZG-YK-xHw" secondAttribute="width" id="V0i-a0-GKb"/>
+                            <constraint firstItem="lCz-t5-1J0" firstAttribute="bottom" secondItem="dSZ-GA-KoW" secondAttribute="bottom" id="Vc0-TK-8MT"/>
+                            <constraint firstItem="ypZ-o7-F2B" firstAttribute="top" secondItem="dSZ-GA-KoW" secondAttribute="top" id="VdH-Lh-llf"/>
+                            <constraint firstItem="H7c-u1-vwB" firstAttribute="height" secondItem="Q0w-pF-7tk" secondAttribute="height" id="VrE-7n-Dfe"/>
+                            <constraint firstItem="3Bd-1J-ccJ" firstAttribute="top" secondItem="YRy-Gf-V7A" secondAttribute="top" id="WFu-HQ-sQ9"/>
+                            <constraint firstItem="aeo-9T-hV6" firstAttribute="height" secondItem="j0C-Qk-KSx" secondAttribute="height" id="WQz-rb-HTU"/>
+                            <constraint firstItem="x2b-Kp-pli" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="13" id="WTM-x6-vZz"/>
+                            <constraint firstItem="fOa-VE-o1U" firstAttribute="width" secondItem="JZG-YK-xHw" secondAttribute="width" id="Xiq-T8-uSt"/>
+                            <constraint firstItem="I6J-Tw-zO1" firstAttribute="bottom" secondItem="y2q-Tw-kWk" secondAttribute="bottom" id="Yp1-fs-loB"/>
+                            <constraint firstItem="fOa-VE-o1U" firstAttribute="bottom" secondItem="JZG-YK-xHw" secondAttribute="bottom" id="ZBr-JQ-6gA"/>
+                            <constraint firstItem="BCy-YZ-Ns5" firstAttribute="width" secondItem="Q0w-pF-7tk" secondAttribute="width" id="ZEC-8i-XYp"/>
+                            <constraint firstItem="SRQ-G4-aIc" firstAttribute="top" secondItem="j0C-Qk-KSx" secondAttribute="top" id="ZkB-dw-St9"/>
+                            <constraint firstItem="IWP-wL-BDs" firstAttribute="width" secondItem="j0C-Qk-KSx" secondAttribute="width" id="aCu-UM-Fnp"/>
+                            <constraint firstItem="OiI-WJ-xnf" firstAttribute="top" secondItem="YRy-Gf-V7A" secondAttribute="bottom" constant="19" id="aJI-RU-Naq"/>
+                            <constraint firstItem="H7c-u1-vwB" firstAttribute="leading" secondItem="Q0w-pF-7tk" secondAttribute="trailing" constant="10" id="bSG-sY-lHq"/>
+                            <constraint firstItem="tug-fX-ub9" firstAttribute="width" secondItem="Q0w-pF-7tk" secondAttribute="width" id="bdu-2m-bnZ"/>
+                            <constraint firstItem="Afw-lV-m1r" firstAttribute="leading" secondItem="j0C-Qk-KSx" secondAttribute="trailing" constant="63" id="boc-IH-Ca3"/>
+                            <constraint firstItem="j0C-Qk-KSx" firstAttribute="leading" secondItem="DIG-fQ-Vgd" secondAttribute="trailing" constant="62" id="c5c-hn-7p5"/>
+                            <constraint firstItem="XhU-wl-8SD" firstAttribute="height" secondItem="dSZ-GA-KoW" secondAttribute="height" id="cT9-Pk-L1j"/>
+                            <constraint firstItem="x2b-Kp-pli" firstAttribute="bottom" secondItem="dSZ-GA-KoW" secondAttribute="bottom" id="dOC-O0-WeF"/>
+                            <constraint firstItem="XhU-wl-8SD" firstAttribute="top" secondItem="dSZ-GA-KoW" secondAttribute="top" id="dOV-cz-hIU"/>
+                            <constraint firstItem="tug-fX-ub9" firstAttribute="height" secondItem="Q0w-pF-7tk" secondAttribute="height" id="dk7-PM-u77"/>
+                            <constraint firstItem="lfJ-6J-jeT" firstAttribute="height" secondItem="rq6-OQ-7Fw" secondAttribute="height" id="dtU-T4-9CB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SRQ-G4-aIc" secondAttribute="trailing" constant="16" id="du9-gP-uBa"/>
+                            <constraint firstItem="lfJ-6J-jeT" firstAttribute="width" secondItem="rq6-OQ-7Fw" secondAttribute="width" id="e6a-HA-Wkm"/>
+                            <constraint firstItem="YRy-Gf-V7A" firstAttribute="width" secondItem="JZG-YK-xHw" secondAttribute="width" id="e7Y-2H-AZb"/>
+                            <constraint firstItem="3Bd-1J-ccJ" firstAttribute="height" secondItem="YRy-Gf-V7A" secondAttribute="height" id="eDt-FC-a0U"/>
+                            <constraint firstItem="x2b-Kp-pli" firstAttribute="height" secondItem="dSZ-GA-KoW" secondAttribute="height" id="eN1-so-PcI"/>
+                            <constraint firstItem="y2q-Tw-kWk" firstAttribute="top" secondItem="Gm1-mr-UPB" secondAttribute="bottom" constant="18" id="eTb-yN-The"/>
+                            <constraint firstItem="aeo-9T-hV6" firstAttribute="top" secondItem="j0C-Qk-KSx" secondAttribute="top" id="f23-0H-sb4"/>
+                            <constraint firstItem="BCy-YZ-Ns5" firstAttribute="height" secondItem="Q0w-pF-7tk" secondAttribute="height" id="foN-LH-asJ"/>
+                            <constraint firstItem="Rkb-O3-rip" firstAttribute="top" secondItem="OiI-WJ-xnf" secondAttribute="bottom" constant="40" id="fwP-mB-hUX"/>
+                            <constraint firstItem="ypZ-o7-F2B" firstAttribute="leading" secondItem="dSZ-GA-KoW" secondAttribute="trailing" constant="119" id="hbe-Ud-Q37"/>
+                            <constraint firstItem="jYu-JV-qie" firstAttribute="width" secondItem="JZG-YK-xHw" secondAttribute="width" id="hh5-JI-4jH"/>
+                            <constraint firstItem="fOa-VE-o1U" firstAttribute="top" secondItem="JZG-YK-xHw" secondAttribute="top" id="hkz-bT-Kbm"/>
+                            <constraint firstItem="DFf-yb-bzd" firstAttribute="width" secondItem="dSZ-GA-KoW" secondAttribute="width" id="jB8-ye-gWe"/>
+                            <constraint firstItem="VN6-8m-6cd" firstAttribute="top" secondItem="JZG-YK-xHw" secondAttribute="top" id="jVQ-Kg-i47"/>
+                            <constraint firstItem="fOa-VE-o1U" firstAttribute="height" secondItem="JZG-YK-xHw" secondAttribute="height" id="jZS-Pe-W0f"/>
+                            <constraint firstItem="H7c-u1-vwB" firstAttribute="bottom" secondItem="Q0w-pF-7tk" secondAttribute="bottom" id="jiQ-Py-aE7"/>
+                            <constraint firstItem="SRQ-G4-aIc" firstAttribute="height" secondItem="j0C-Qk-KSx" secondAttribute="height" id="jp3-Z5-Tzq"/>
+                            <constraint firstItem="DIG-fQ-Vgd" firstAttribute="height" secondItem="j0C-Qk-KSx" secondAttribute="height" id="khN-e5-9BZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gm1-mr-UPB" secondAttribute="trailing" constant="136" id="kl8-83-sXl"/>
+                            <constraint firstItem="YRy-Gf-V7A" firstAttribute="height" secondItem="JZG-YK-xHw" secondAttribute="height" id="l6o-t2-shh"/>
+                            <constraint firstItem="BCy-YZ-Ns5" firstAttribute="bottom" secondItem="Q0w-pF-7tk" secondAttribute="bottom" id="lQT-hR-Axb"/>
+                            <constraint firstItem="dSZ-GA-KoW" firstAttribute="top" secondItem="Q0w-pF-7tk" secondAttribute="bottom" constant="9" id="liF-ra-VlW"/>
+                            <constraint firstItem="dSZ-GA-KoW" firstAttribute="height" secondItem="Q0w-pF-7tk" secondAttribute="height" id="lmi-h2-PWW"/>
+                            <constraint firstItem="j0C-Qk-KSx" firstAttribute="top" secondItem="y2q-Tw-kWk" secondAttribute="bottom" constant="11" id="lqu-Js-OOQ"/>
+                            <constraint firstItem="jYu-JV-qie" firstAttribute="top" secondItem="JZG-YK-xHw" secondAttribute="top" id="mQU-Mm-PzD"/>
+                            <constraint firstItem="3Bd-1J-ccJ" firstAttribute="width" secondItem="YRy-Gf-V7A" secondAttribute="width" id="mgA-aS-e4y"/>
+                            <constraint firstItem="x2b-Kp-pli" firstAttribute="width" secondItem="dSZ-GA-KoW" secondAttribute="width" id="mhq-Bj-CrF"/>
+                            <constraint firstItem="Afw-lV-m1r" firstAttribute="top" secondItem="j0C-Qk-KSx" secondAttribute="top" id="mpP-Vs-yeh"/>
+                            <constraint firstItem="tug-fX-ub9" firstAttribute="leading" secondItem="Q0w-pF-7tk" secondAttribute="trailing" constant="64" id="n12-RW-NKA"/>
+                            <constraint firstItem="DFf-yb-bzd" firstAttribute="leading" secondItem="dSZ-GA-KoW" secondAttribute="trailing" constant="11" id="nKc-58-cbR"/>
+                            <constraint firstItem="sRX-lS-gW1" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="40" id="ngj-pY-qWn"/>
+                            <constraint firstItem="JZG-YK-xHw" firstAttribute="height" secondItem="dSZ-GA-KoW" secondAttribute="height" id="nuy-JN-VDP"/>
+                            <constraint firstItem="lCz-t5-1J0" firstAttribute="width" secondItem="dSZ-GA-KoW" secondAttribute="width" id="pGi-Z5-Ipv"/>
+                            <constraint firstItem="JZG-YK-xHw" firstAttribute="leading" secondItem="jYu-JV-qie" secondAttribute="trailing" constant="8" id="pKZ-Ha-3jz"/>
+                            <constraint firstItem="YRy-Gf-V7A" firstAttribute="leading" secondItem="3Bd-1J-ccJ" secondAttribute="trailing" constant="8" id="peq-Ce-EDY"/>
+                            <constraint firstItem="LV4-L1-eIE" firstAttribute="leading" secondItem="JZG-YK-xHw" secondAttribute="trailing" constant="10" id="qCA-od-blE"/>
+                            <constraint firstItem="XhU-wl-8SD" firstAttribute="bottom" secondItem="dSZ-GA-KoW" secondAttribute="bottom" id="r4D-Kq-I6J"/>
+                            <constraint firstItem="VN6-8m-6cd" firstAttribute="height" secondItem="JZG-YK-xHw" secondAttribute="height" id="rHK-Zw-p95"/>
+                            <constraint firstItem="Q0w-pF-7tk" firstAttribute="height" secondItem="j0C-Qk-KSx" secondAttribute="height" id="rba-3i-7F8"/>
+                            <constraint firstItem="I6J-Tw-zO1" firstAttribute="leading" secondItem="y2q-Tw-kWk" secondAttribute="trailing" constant="7" id="rzq-3v-vWQ"/>
+                            <constraint firstItem="dSZ-GA-KoW" firstAttribute="leading" secondItem="x2b-Kp-pli" secondAttribute="trailing" constant="62" id="s1r-Te-Aon"/>
+                            <constraint firstItem="OiI-WJ-xnf" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="138" id="sql-72-mlt"/>
+                            <constraint firstItem="agB-c1-Ti5" firstAttribute="top" secondItem="fga-sG-nzY" secondAttribute="bottom" constant="24" id="szT-Qw-5C5"/>
+                            <constraint firstItem="dSZ-GA-KoW" firstAttribute="width" secondItem="Q0w-pF-7tk" secondAttribute="width" id="tME-UU-NlO"/>
+                            <constraint firstItem="JZG-YK-xHw" firstAttribute="top" secondItem="dSZ-GA-KoW" secondAttribute="bottom" constant="9" id="tom-75-kqS"/>
+                            <constraint firstItem="aeo-9T-hV6" firstAttribute="width" secondItem="j0C-Qk-KSx" secondAttribute="width" id="uDr-cY-tcX"/>
+                            <constraint firstItem="DIG-fQ-Vgd" firstAttribute="leading" secondItem="xKS-yl-l6T" secondAttribute="leadingMargin" constant="13" id="uQS-ub-coO"/>
+                            <constraint firstItem="jYu-JV-qie" firstAttribute="height" secondItem="JZG-YK-xHw" secondAttribute="height" id="uR2-rM-Gga"/>
+                            <constraint firstItem="LV4-L1-eIE" firstAttribute="bottom" secondItem="JZG-YK-xHw" secondAttribute="bottom" id="uVJ-41-awW"/>
+                            <constraint firstItem="ypZ-o7-F2B" firstAttribute="width" secondItem="dSZ-GA-KoW" secondAttribute="width" id="v0t-NK-JNT"/>
+                            <constraint firstItem="LV4-L1-eIE" firstAttribute="height" secondItem="JZG-YK-xHw" secondAttribute="height" id="vHi-Xd-6lk"/>
+                            <constraint firstItem="j0C-Qk-KSx" firstAttribute="leading" secondItem="aeo-9T-hV6" secondAttribute="trailing" constant="8" id="vNt-gc-ilx"/>
+                            <constraint firstItem="VN6-8m-6cd" firstAttribute="width" secondItem="JZG-YK-xHw" secondAttribute="width" id="vtX-dS-wty"/>
+                            <constraint firstItem="VN6-8m-6cd" firstAttribute="bottom" secondItem="JZG-YK-xHw" secondAttribute="bottom" id="w5H-FX-tTb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="agB-c1-Ti5" secondAttribute="trailing" constant="80" id="wEY-JU-1ox"/>
+                            <constraint firstItem="H7c-u1-vwB" firstAttribute="width" secondItem="Q0w-pF-7tk" secondAttribute="width" id="wLC-Q9-okh"/>
+                            <constraint firstItem="rq6-OQ-7Fw" firstAttribute="bottom" secondItem="YRy-Gf-V7A" secondAttribute="bottom" id="x6j-xx-VAt"/>
+                            <constraint firstItem="dSZ-GA-KoW" firstAttribute="leading" secondItem="lCz-t5-1J0" secondAttribute="trailing" constant="8" id="xES-hO-yh8"/>
+                            <constraint firstItem="lCz-t5-1J0" firstAttribute="height" secondItem="dSZ-GA-KoW" secondAttribute="height" id="xU9-ey-zR7"/>
+                            <constraint firstItem="sRX-lS-gW1" firstAttribute="width" secondItem="Q0w-pF-7tk" secondAttribute="width" id="xzP-ra-9Hx"/>
+                            <constraint firstItem="rq6-OQ-7Fw" firstAttribute="width" secondItem="YRy-Gf-V7A" secondAttribute="width" id="yfO-r0-wQI"/>
+                            <constraint firstItem="Q0w-pF-7tk" firstAttribute="width" secondItem="j0C-Qk-KSx" secondAttribute="width" id="zTp-FY-hMd"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayPhrase" destination="Gm1-mr-UPB" id="sxy-jJ-Rm1"/>
+                        <outlet property="guess" destination="OiI-WJ-xnf" id="dHo-Jb-E5T"/>
+                        <outlet property="hangmanPic" destination="agB-c1-Ti5" id="GeO-R4-ftI"/>
+                        <outlet property="numIncorrectGuess" destination="I6J-Tw-zO1" id="2xk-hQ-YDK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJo-zA-LYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="-133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hangman1" width="200" height="200"/>
+    </resources>
 </document>

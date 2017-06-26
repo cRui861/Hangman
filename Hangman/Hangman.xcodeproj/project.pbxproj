@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35F96D4D1ECFC954009D056C /* LetterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F96D4C1ECFC954009D056C /* LetterButton.swift */; };
 		ECC22F431C89177600749E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC22F421C89177600749E58 /* AppDelegate.swift */; };
 		ECC22F481C89177600749E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC22F461C89177600749E58 /* Main.storyboard */; };
 		ECC22F4A1C89177600749E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC22F491C89177600749E58 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35F96D4C1ECFC954009D056C /* LetterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterButton.swift; sourceTree = "<group>"; };
 		ECC22F3F1C89177600749E58 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC22F421C89177600749E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC22F471C89177600749E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35F96D4B1ECFC93A009D056C /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+				35F96D4C1ECFC954009D056C /* LetterButton.swift */,
+			);
+			name = Designables;
+			sourceTree = "<group>";
+		};
 		6CAA6A4C1E2B1CCA009392E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		ECC22F411C89177600749E58 /* Hangman */ = {
 			isa = PBXGroup;
 			children = (
+				35F96D4B1ECFC93A009D056C /* Designables */,
 				ECC22F741C8917FF00749E58 /* Model */,
 				ECC22F731C8917DC00749E58 /* View */,
 				ECC22F721C8917D300749E58 /* Controller */,
@@ -299,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC22F711C8917C200749E58 /* HangmanViewController.swift in Sources */,
+				35F96D4D1ECFC954009D056C /* LetterButton.swift in Sources */,
 				ECC22F431C89177600749E58 /* AppDelegate.swift in Sources */,
 				ECC22F7E1C891CF800749E58 /* HangmanPhrases.swift in Sources */,
 			);
