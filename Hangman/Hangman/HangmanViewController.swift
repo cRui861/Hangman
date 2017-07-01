@@ -14,8 +14,11 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var displayPhrase: UILabel!
     @IBOutlet weak var numIncorrectGuess: UILabel!
     @IBOutlet weak var guess: UIButton!
+    @IBOutlet var letters: [LetterButton]!
     
-    var phrase: String?
+    var phrase: String!
+    var phraseLength: Int?
+    var phraseArray: [Character]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,21 +33,44 @@ class HangmanViewController: UIViewController {
     *  Starts new game
     */
     func newGame() {
+        for letter in letters {
+            letter.isEnabled = true
+        }
+        
         let hangmanPhrases = HangmanPhrases()
         // Generate a random phrase for the user to guess
         phrase = hangmanPhrases.getRandomPhrase()
-        print(phrase)
         
-        var blankDisplay: String = ""
-        var phraseLen = phrase!.characters.count
-        print(phraseLen)
-        while phraseLen != 0 {
-            blankDisplay = blankDisplay + String("_ ")
-            phraseLen -= 1
+        // checks if phrase actually unwraps to a String type
+        if phrase! != "" {
+            phraseArray = [Character] (phrase.characters)
+            phraseLength = phrase.characters.count
+            
+            //sets the phrase on display to nothing (will fill in with -'s below)
+            displayPhrase.text = ""
+            for i in 0...phraseLength!-1 {
+                if (String(phraseArray![i]) == " ") {
+                    displayPhrase.text = displayPhrase.text! + " "
+                } else {
+                    displayPhrase.text = displayPhrase.text! + "- "
+                }
+            }
         }
+        
     }
     
+    @IBAction func letterPressed(_ sender: LetterButton) {
+        let letter = sender.currentTitle!
+        print("touched \(letter) letter")
+    }
 
+    
+    @IBAction func guessPressed(_ sender: UIButton) {
+        
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
