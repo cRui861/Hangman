@@ -19,9 +19,18 @@ class HangmanViewController: UIViewController {
     var phrase: String!
     var phraseLength: Int?
     var phraseArray: [Character]?
+    var incorrectGuesses: Int!
+    var letterChosen: String?
+    //previous button chosen
+    var buttonChosen: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for letter in letters {
+            letter.backgroundColor = UIColor.sapphireBlue
+        }
+        newGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +42,8 @@ class HangmanViewController: UIViewController {
     *  Starts new game
     */
     func newGame() {
+        hangmanPic.image = UIImage(named: "hangman1")
+        
         for letter in letters {
             letter.isEnabled = true
         }
@@ -55,21 +66,64 @@ class HangmanViewController: UIViewController {
                     displayPhrase.text = displayPhrase.text! + "- "
                 }
             }
+            // removing ellipsis
+            displayPhrase.lineBreakMode = .byClipping
         }
         
     }
     
     @IBAction func letterPressed(_ sender: LetterButton) {
-        let letter = sender.currentTitle!
-        print("touched \(letter) letter")
+        if (sender == buttonChosen) { return }
+        letterChosen = sender.currentTitle!
+        if let theButton = buttonChosen {
+            if theButton.isEnabled {
+                theButton.backgroundColor = UIColor.sapphireBlue
+            }
+        }
+        buttonChosen = sender
+        buttonChosen?.backgroundColor = UIColor.seaBlue
+        print("touched \(letterChosen!) letter")
     }
 
     
     @IBAction func guessPressed(_ sender: UIButton) {
+        buttonChosen?.isEnabled = false
+        buttonChosen?.backgroundColor = UIColor.slateGray
+    }
+    
+    func testWinState() {
         
     }
     
+    func testLostState() {
+        
+    }
     
+    func updateHangmanPic() {
+
+        // let imageName = "hangman\(incorrectGuesses)"
+        // hangmanPic.image = UIImage(named: imageName)
+        
+        switch incorrectGuesses {
+        case 0:
+            hangmanPic.image = UIImage(named: "hangman1")
+        case 1:
+            hangmanPic.image = UIImage(named: "hangman2")
+        case 2:
+            hangmanPic.image = UIImage(named: "hangman3")
+        case 3:
+            hangmanPic.image = UIImage(named: "hangman4")
+        case 4:
+            hangmanPic.image = UIImage(named: "hangman5")
+        case 5:
+            hangmanPic.image = UIImage(named: "hangman6")
+        case 6:
+            hangmanPic.image = UIImage(named: "hangman7")
+        default:
+            print("You have reached max guess capacity")
+        }
+        
+    }
     
     /*
     // MARK: - Navigation
