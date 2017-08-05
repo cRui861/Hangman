@@ -89,6 +89,17 @@ class HangmanViewController: UIViewController {
     @IBAction func guessPressed(_ sender: UIButton) {
         buttonChosen?.isEnabled = false
         buttonChosen?.backgroundColor = UIColor.slateGray
+        var index = 0
+        if let str = displayPhrase.text {
+            for checkLetter in phraseArray! {
+                if String(checkLetter) == letterChosen {
+                    displayPhrase.text?.remove(at: str.index(str.startIndex, offsetBy: index))
+                    displayPhrase.text?.insert(checkLetter, at: str.index(str.startIndex, offsetBy: index))
+                }
+                index += 1
+            }
+        }
+        
     }
     
     func testWinState() {
