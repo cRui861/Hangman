@@ -19,7 +19,14 @@ class HangmanViewController: UIViewController {
     var phrase: String!
     var phraseLength: Int?
     var phraseArray: [Character]?
-    var incorrectGuesses: Int!
+    var incorrectGuesses: Int = 0 {
+        // update handler
+        // each time incorrectGuesses changes, below will change
+        didSet {
+            numIncorrectGuess.text = String(incorrectGuesses)
+            updateHangmanPic()
+        }
+    }
     var letterChosen: String?
     //previous button chosen
     var buttonChosen: UIButton?
@@ -58,8 +65,6 @@ class HangmanViewController: UIViewController {
         if phrase! != "" {
             phraseArray = [Character] (phrase.characters)
             phraseLength = phrase.characters.count
-            print("The phraselength is \(phraseLength)")
-            
             //sets the phrase on display to nothing (will fill in with -'s below)
             displayPhrase.text = ""
             for i in 0...phraseLength!-1 {
@@ -91,18 +96,20 @@ class HangmanViewController: UIViewController {
         buttonChosen?.isEnabled = false
         buttonChosen?.backgroundColor = UIColor.slateGray
         var index = 0
+        var isLetterThere = false
         if let display = displayPhrase.text {
             for checkLetter in phraseArray! {
                 if String(checkLetter) == letterChosen {
+                    isLetterThere = true
                     displayPhrase.text?.remove(at: display.index(display.startIndex, offsetBy: index))
-                    print("After removing: \(displayPhrase.text)")
                     displayPhrase.text?.insert(checkLetter, at: display.index(display.startIndex, offsetBy: index))
-                    print("After inserting :\(displayPhrase.text)")
                 }
                 index += 1
             }
+            if !isLetterThere {
+                incorrectGuesses += 1
+            }
         }
-        
     }
     
     func testWinState() {
