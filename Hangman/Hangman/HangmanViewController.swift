@@ -52,10 +52,13 @@ class HangmanViewController: UIViewController {
         // Generate a random phrase for the user to guess
         phrase = hangmanPhrases.getRandomPhrase()
         
+        print("Phrase: \(phrase)")
+        
         // checks if phrase actually unwraps to a String type
         if phrase! != "" {
             phraseArray = [Character] (phrase.characters)
             phraseLength = phrase.characters.count
+            print("The phraselength is \(phraseLength)")
             
             //sets the phrase on display to nothing (will fill in with -'s below)
             displayPhrase.text = ""
@@ -63,11 +66,9 @@ class HangmanViewController: UIViewController {
                 if (String(phraseArray![i]) == " ") {
                     displayPhrase.text = displayPhrase.text! + " "
                 } else {
-                    displayPhrase.text = displayPhrase.text! + "- "
+                    displayPhrase.text = displayPhrase.text! + "-"
                 }
             }
-            // removing ellipsis
-            displayPhrase.lineBreakMode = .byClipping
         }
         
     }
@@ -90,11 +91,13 @@ class HangmanViewController: UIViewController {
         buttonChosen?.isEnabled = false
         buttonChosen?.backgroundColor = UIColor.slateGray
         var index = 0
-        if let str = displayPhrase.text {
+        if let display = displayPhrase.text {
             for checkLetter in phraseArray! {
                 if String(checkLetter) == letterChosen {
-                    displayPhrase.text?.remove(at: str.index(str.startIndex, offsetBy: index))
-                    displayPhrase.text?.insert(checkLetter, at: str.index(str.startIndex, offsetBy: index))
+                    displayPhrase.text?.remove(at: display.index(display.startIndex, offsetBy: index))
+                    print("After removing: \(displayPhrase.text)")
+                    displayPhrase.text?.insert(checkLetter, at: display.index(display.startIndex, offsetBy: index))
+                    print("After inserting :\(displayPhrase.text)")
                 }
                 index += 1
             }
