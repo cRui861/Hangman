@@ -51,8 +51,11 @@ class HangmanViewController: UIViewController {
     func newGame() {
         hangmanPic.image = UIImage(named: "hangman1")
         
+        incorrectGuesses = 0
+        
         for letter in letters {
             letter.isEnabled = true
+            letter.backgroundColor = UIColor.sapphireBlue
         }
         
         let hangmanPhrases = HangmanPhrases()
@@ -106,25 +109,35 @@ class HangmanViewController: UIViewController {
                 }
                 index += 1
             }
+            if displayPhrase.text == phrase {
+                winState()
+            }
             if !isLetterThere {
                 incorrectGuesses += 1
             }
         }
     }
     
-    func testWinState() {
-        
+    func winState() {
+        let winner = UIAlertController(title: "You Won!", message: "Potato-Cat is happy! Would you like to play again?", preferredStyle: .alert)
+        // completion handlers need self when calling class variables/methods
+        let newGameAction = UIAlertAction(title: "New Game", style: .cancel) { (action) in
+            self.newGame()
+        }
+        winner.addAction(newGameAction)
+        self.present(winner, animated: true, completion: nil)
     }
     
-    func testLostState() {
-        
+    func loseState() {
+        let loser = UIAlertController(title: "You Lost", message: "Potato-Cat is unhappy. Would you like to try again?", preferredStyle: .alert)
+        let newGameAction = UIAlertAction(title: "New Game", style: .cancel) { (action) in
+            self.newGame()
+        }
+        loser.addAction(newGameAction)
+        self.present(loser, animated: false, completion: nil)
     }
     
     func updateHangmanPic() {
-
-        // let imageName = "hangman\(incorrectGuesses)"
-        // hangmanPic.image = UIImage(named: imageName)
-        
         switch incorrectGuesses {
         case 0:
             hangmanPic.image = UIImage(named: "hangman1")
@@ -140,6 +153,7 @@ class HangmanViewController: UIViewController {
             hangmanPic.image = UIImage(named: "hangman6")
         case 6:
             hangmanPic.image = UIImage(named: "hangman7")
+            loseState()
         default:
             print("You have reached max guess capacity")
         }
